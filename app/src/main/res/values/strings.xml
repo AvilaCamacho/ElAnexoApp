@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">El Anexo</string>
+    <string name="items_title">Mis Items</string>
+    <string name="add_item">Agregar Item</string>
+    <string name="edit_item">Editar Item</string>
+    <string name="delete_item">Eliminar</string>
+    <string name="save">Guardar</string>
+    <string name="cancel">Cancelar</string>
+    <string name="title">Título</string>
+    <string name="description">Descripción</string>
+    <string name="take_photo">Tomar Foto</string>
+    <string name="get_location">Obtener Ubicación</string>
+    <string name="loading">Cargando...</string>
+    <string name="error_loading">Error al cargar datos</string>
+    <string name="error_saving">Error al guardar</string>
+    <string name="success_saved">Guardado exitosamente</string>
+    <string name="confirm_delete">¿Confirmar eliminación?</string>
+    <string name="latitude">Latitud</string>
+    <string name="longitude">Longitud</string>
+    <string name="camera_permission_required">Se requiere permiso de cámara</string>
+    <string name="location_permission_required">Se requiere permiso de ubicación</string>
+</resources>
