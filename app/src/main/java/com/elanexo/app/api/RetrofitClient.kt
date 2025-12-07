@@ -8,7 +8,8 @@ import java.util.concurrent.TimeUnit
 
 object RetrofitClient {
     // Using JSONPlaceholder as a demo REST API
-    // In a real app, replace with your actual API endpoint
+    // JSONPlaceholder uses 'posts' endpoints, which we map to our Item model
+    // In a real app, replace with your actual API endpoint and update ApiService endpoints
     private const val BASE_URL = "https://jsonplaceholder.typicode.com/"
     
     private val loggingInterceptor = HttpLoggingInterceptor().apply {

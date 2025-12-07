@@ -78,10 +78,12 @@ fun ItemListScreen(
                         verticalArrangement = Arrangement.spacedBy(8.dp)
                     ) {
                         items(uiState.items) { item ->
-                            ItemCard(
-                                item = item,
-                                onClick = { onItemClick(item.id ?: 0) }
-                            )
+                            item.id?.let { itemId ->
+                                ItemCard(
+                                    item = item,
+                                    onClick = { onItemClick(itemId) }
+                                )
+                            }
                         }
                     }
                 }

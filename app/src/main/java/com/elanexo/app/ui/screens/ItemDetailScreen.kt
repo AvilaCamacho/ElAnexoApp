@@ -75,8 +75,8 @@ fun ItemDetailScreen(
                     )
                 }
                 uiState.selectedItem != null -> {
-                    val item = uiState.selectedItem!!
-                    Column(
+                    uiState.selectedItem.let { item ->
+                        Column(
                         modifier = Modifier
                             .fillMaxSize()
                             .padding(16.dp),

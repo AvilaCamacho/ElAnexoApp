@@ -9,25 +9,25 @@ import retrofit2.http.*
 interface ApiService {
     
     // CREATE
-    @POST("items")
+    @POST("posts")
     suspend fun createItem(@Body request: CreateItemRequest): Response<Item>
     
     // READ - Get all items
-    @GET("items")
+    @GET("posts")
     suspend fun getAllItems(): Response<List<Item>>
     
     // READ - Get single item
-    @GET("items/{id}")
+    @GET("posts/{id}")
     suspend fun getItem(@Path("id") id: Int): Response<Item>
     
     // UPDATE
-    @PUT("items/{id}")
+    @PUT("posts/{id}")
     suspend fun updateItem(
         @Path("id") id: Int,
         @Body request: UpdateItemRequest
     ): Response<Item>
     
     // DELETE
-    @DELETE("items/{id}")
+    @DELETE("posts/{id}")
     suspend fun deleteItem(@Path("id") id: Int): Response<Unit>
 }

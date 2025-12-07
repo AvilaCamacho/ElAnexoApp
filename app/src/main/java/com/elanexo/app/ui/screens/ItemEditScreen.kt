@@ -47,13 +47,14 @@ fun ItemEditScreen(
     }
     
     LaunchedEffect(uiState.selectedItem) {
-        if (!initialized && uiState.selectedItem != null) {
-            val item = uiState.selectedItem!!
-            title = item.title
-            description = item.description
-            latitude = item.latitude
-            longitude = item.longitude
-            initialized = true
+        uiState.selectedItem?.let { item ->
+            if (!initialized) {
+                title = item.title
+                description = item.description
+                latitude = item.latitude
+                longitude = item.longitude
+                initialized = true
+            }
         }
     }
     
