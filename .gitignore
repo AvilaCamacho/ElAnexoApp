@@ -36,3 +36,6 @@ captures/
 .navigation/
 *.hprof
 .cxx/
+
+# Gradle wrapper downloads
+gradle/wrapper/gradle-wrapper.jar
