@@ -21,15 +21,16 @@ local.properties
 bin/
 gen/
 out/
-.gradle/
 build/
-local.properties
-proguard/
 *.log
 .navigation/
 captures/
 output.json
-*.iml
-.idea
 *.hprof
 .cxx/
+
+# Gradle files
+!gradle-wrapper.jar
+!gradle-wrapper.properties
+!gradlew
+!gradlew.bat
