@@ -34,3 +34,12 @@ output.json
 !gradle-wrapper.properties
 !gradlew
 !gradlew.bat
+
+# Backend Python
+backend/venv/
+backend/__pycache__/
+backend/*.pyc
+backend/*.db
+backend/uploads/
+backend/.pytest_cache/
+backend/*.egg-info/
