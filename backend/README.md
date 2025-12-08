@@ -39,10 +39,20 @@ pip install -r requirements.txt
 
 5. **Inicia el servidor:**
 ```bash
+# Modo desarrollo (por defecto, sin debug)
 python app.py
+
+# Modo desarrollo con debug (solo para desarrollo)
+FLASK_DEBUG=true python app.py
 ```
 
 El servidor estará disponible en `http://localhost:5000`
+
+**⚠️ IMPORTANTE:** El servidor Flask de desarrollo no debe usarse en producción. Para producción, usa un servidor WSGI como Gunicorn:
+```bash
+pip install gunicorn
+gunicorn -w 4 -b 0.0.0.0:5000 app:app
+```
 
 ## 📋 Endpoints de la API
 

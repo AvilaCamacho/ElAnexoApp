@@ -243,4 +243,9 @@ def index():
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000, debug=True)
+    # NOTA: debug=True solo para desarrollo
+    # En producción, usar un servidor WSGI como Gunicorn o uWSGI
+    # Ejemplo: gunicorn -w 4 -b 0.0.0.0:5000 app:app
+    import os
+    debug_mode = os.environ.get('FLASK_DEBUG', 'False').lower() == 'true'
+    app.run(host='0.0.0.0', port=5000, debug=debug_mode)
