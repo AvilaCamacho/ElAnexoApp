@@ -32,9 +32,8 @@ def allowed_file(filename):
            filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
 
-@app.before_first_request
-def create_tables():
-    """Crea las tablas de la base de datos si no existen"""
+# Crear las tablas de la base de datos
+with app.app_context():
     db.create_all()
 
 
