@@ -107,7 +107,10 @@ def create_message():
     # Generar nombre único si ya existe
     base_name, extension = os.path.splitext(filename)
     counter = 1
+    max_retries = 1000
     while os.path.exists(os.path.join(app.config['UPLOAD_FOLDER'], filename)):
+        if counter > max_retries:
+            return jsonify({'error': 'No se pudo generar nombre único para el archivo'}), 500
         filename = f"{base_name}_{counter}{extension}"
         counter += 1
     
@@ -161,7 +164,10 @@ def update_message(message_id):
             filename = secure_filename(file.filename)
             base_name, extension = os.path.splitext(filename)
             counter = 1
+            max_retries = 1000
             while os.path.exists(os.path.join(app.config['UPLOAD_FOLDER'], filename)):
+                if counter > max_retries:
+                    return jsonify({'error': 'No se pudo generar nombre único para el archivo'}), 500
                 filename = f"{base_name}_{counter}{extension}"
                 counter += 1
             
@@ -177,7 +183,10 @@ def update_message(message_id):
     if 'recipient' in request.form:
         message.recipient = request.form['recipient']
     if 'duration' in request.form:
-        message.duration = float(request.form['duration'])
+        try:
+            message.duration = float(request.form['duration'])
+        except ValueError:
+            return jsonify({'error': 'duration debe ser un número válido'}), 400
     
     db.session.commit()
     

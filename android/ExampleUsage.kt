@@ -157,7 +157,8 @@ class ExampleUsage(private val context: Context) {
                     Log.d(TAG, "Mensaje creado exitosamente: ID ${message?.id}")
                     Log.d(TAG, "Archivo: ${message?.filename}, Tamaño: ${message?.file_size} bytes")
                 } else {
-                    Log.e(TAG, "Error al crear mensaje: ${response.code()} - ${response.errorBody()?.string()}")
+                    val errorBody = response.errorBody()?.string()
+                    Log.e(TAG, "Error al crear mensaje: ${response.code()} - $errorBody")
                 }
             }
             
